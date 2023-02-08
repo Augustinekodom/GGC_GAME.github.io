@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        @font-face {
+            font-family: "MyFont";
+            src: url("Gameplay2.ttf") format("truetype");
+          }
+          #score-display, #lives-display {
+            font-family: "MyFont";
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 10px;
+          }
+          
+          
+          
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(20, 20, 20);
+          }
+
+            
+          
+          #game-container {
+            background-image: url("bg.gif");
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+            filter: brightness(0.9);
+            width: 100%;
+          }
+         
+          
+          
+          
+          #basket {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+          }
+          
+          
+          .hat {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url("black.png");
+            background-size: cover;
+          }
+          
+          #game-over {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 36px;
+            font-family: "MyFont";
+          }
+          
+          #score-display, #lives-display {
+            position: absolute;
+            font-size: 18px;
+          }
+          
+          #score-display {
+            top: 0;
+            left: 0;
+            padding: 10px;
+          }
+          
+          #lives-display {
+            top: 0;
+            right: 0;
+            padding: 10px;
+          }
+          #restart-button {
+            font-family: "MyFont";
+            font-size: 20px;
+            color: #000;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+          
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+        <img id="basket" src="basket.png"/>
+      </div>
+      
+      <div id="game-over">
+        <p>Game Ovr, Move Qicka!</p>
+        <p>Score: <span id="score"></span></p>
+        <button id="restart-button">Restart</button>
+      </div>
+      
+      <div id="score-display">Hats: 0</div>
+      <div id="lives-display">Lives: 3</div>
+      
+  </body>
+  <script src="game.js"></script>
+</html>

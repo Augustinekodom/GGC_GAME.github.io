@@ -10,6 +10,28 @@ let lives = 3;
 let currentScore = 0;
 let hatInterval;
 
+
+let basketX = basket.offsetLeft;
+let startX;
+
+basket.addEventListener("touchstart", function(e) {
+  startX = e.touches[0].pageX;
+});
+
+basket.addEventListener("touchmove", function(e) {
+  let currentX = e.touches[0].pageX;
+  let diffX = startX - currentX;
+  basketX -= diffX;
+  basket.style.left = basketX + "px";
+  startX = currentX;
+});
+
+basket.addEventListener("touchend", function(e) {
+  // do nothing
+});
+
+
+
 // move the basket to the left or right on user input
 gameContainer.addEventListener("mousemove", function(event) {
   basket.style.left = event.clientX - basket.offsetWidth / 2 + "px";
@@ -17,6 +39,8 @@ gameContainer.addEventListener("mousemove", function(event) {
 
 // start the game
 startGame();
+
+
 
 // handle the hat catching logic
 gameContainer.addEventListener("click", function(event) {

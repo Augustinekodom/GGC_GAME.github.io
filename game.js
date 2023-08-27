@@ -5,6 +5,10 @@ const score = document.getElementById("score");
 const scoreDisplay = document.getElementById("score-display");
 const livesDisplay = document.getElementById("lives-display");
 const restartButton = document.getElementById("restart-button");
+const productButton = document.getElementById("shop-button");
+
+
+
 
 let lives = 3;
 let currentScore = 0;
@@ -41,6 +45,10 @@ gameContainer.addEventListener("mousemove", function(event) {
 startGame();
 
 
+// Listen for button click to redirect to the product page
+productButton.addEventListener("click", function() {
+  window.location.href = "https://geniusgoneclueless.com/search?q=beani&options%5Bprefix%5D=last";
+});
 
 // handle the hat catching logic
 gameContainer.addEventListener("click", function(event) {
@@ -59,10 +67,14 @@ gameContainer.addEventListener("click", function(event) {
   }
 });
 
+
+
 // restart the game on button click
 restartButton.addEventListener("click", function() {
   gameOver.style.display = "none";
+  
   startGame();
+  
 });
 
 // start the game
@@ -85,6 +97,7 @@ function startGame() {
     hat.style.left = Math.random() * (gameContainer.offsetWidth - 50) + "px";
     //hat.style.background = none;
     hat.style.top = "-50px";
+    //hat.speed = Math.random() * 5 + 1; // random speed between 1 and 6
     gameContainer.appendChild(hat);
     
     let hatDropInterval = setInterval(function() {
@@ -109,6 +122,7 @@ function startGame() {
           clearInterval(hatInterval);
           gameOver.style.display = "flex";
           score.innerText = currentScore;
+          
         }
       }
       

@@ -22,13 +22,24 @@ basket.addEventListener("touchstart", function(e) {
   startX = e.touches[0].pageX;
 });
 
-basket.addEventListener("touchmove", function(e) {
+ basket.addEventListener("touchmove", function(e) {
   let currentX = e.touches[0].pageX;
   let diffX = startX - currentX;
   basketX -= diffX;
   basket.style.left = basketX + "px";
   startX = currentX;
+}); 
+
+// Prevent default touch events to disable vertical scrolling
+document.body.addEventListener("touchstart", function(e) {
+  e.preventDefault();
 });
+
+document.body.addEventListener("touchmove", function(e) {
+  e.preventDefault();
+});
+
+
 
 basket.addEventListener("touchend", function(e) {
   // do nothing

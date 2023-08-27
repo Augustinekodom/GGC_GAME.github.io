@@ -98,10 +98,39 @@
             border-radius: 5px;
             cursor: pointer;
             position: absolute;
-            top: 50%;
+            top: 46%;
             left: 50%;
             transform: translate(-50%, -50%);
           }
+          #shop-button{
+            font-family: "MyFont";
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #368ee0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+
+          }
+          
+
+          #email-form {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+          }
+          
+          #email-input {
+            font-family: "MyFont";
+            font-size: 20px;
+            color: #000;
+            background-color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px;
+          }
+          
+     
           
           
     </style>
@@ -115,10 +144,15 @@
         <p>Move Qicka!</p>
         <p>Score: <span id="score"></span></p>
         <button id="restart-button">Restart</button>
+        <button id="shop-button">Shop Hats</button>
+    
       </div>
       
       <div id="score-display">Hats: 0</div>
       <div id="lives-display">Lives: 3</div>
+
+      
+      
       
   </body>
   <script src="game.js"></script>
